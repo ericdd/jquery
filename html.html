@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>html</title>
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;}
+#box{width:600px;padding:10px;border:1px solid blue;margin:20px;padding:20px; }
+</style>
+</head>
+<body>
+<pre>
+index为元素在集合中的索引位置，html为原先的HTML值。
+
+</pre>
+
+<div id="box">abc</div>
+
+<input type="button" id="btn" value="确 定"/>
+
+<script type="text/javascript" src="jquery-1.7.js"></script>
+
+<script type="text/javascript">
+
+$("#btn").click(function() {
+
+	$('#box').html(function(n,oldhtml) {
+	  return oldhtml +"," + n;
+	});
+
+})
+
+
+
+</script>
+</body>
+</html>
+

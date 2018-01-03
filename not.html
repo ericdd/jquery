@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>not</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+
+div{border:1px solid blue;margin-top:5px;}
+p{border:1px solid red;}
+.over{background:blue;color:#fff;width:600px;}
+.out{background:#aaa;color:purple;}
+#dv{border:1px solid blue;margin-bottom:5px;}
+</style>
+</head>
+<body>
+
+<img src="1.jpg"  alt="" />
+<img src="2.jpg"  alt="" />
+
+
+<p id="p1">第一个段落P </p>
+<p id="p2">第二个段落P</p>
+<p id="p3">第三个段落P</p>
+
+<h4 style="width:600px;height:50px;background:red;color:white">第1个h4</h4>
+<h4 style="width:300px;height:50px;background:blue;color:white">第2个h4</h4>
+<h4 style="width:600px;height:50px;background:red;color:white">第3个h4</h4>
+<h4 style="width:300px;height:50px;background:blue;color:white">第4个h4</h4>
+
+<script type="text/javascript">
+
+$("p").attr("title", function(){return this.innerHTML }).css("background","green");
+
+//$("img").not($("img:last")).attr("title", function() {return this.src });
+$("img:not(img:last)").attr("title", function() {return this.src });           //not可用于集合内和外，等价于上一句
+$("img:eq(0)").attr("title", "这是第一张图片");
+
+$("h4:not(h4:first)").each(function(){
+//$(this).attr("title",$("h4:first").html());       //把第一个h4的html()赋给除自己以外的h4作为其title
+$(this).attr("title",$(this).html());
+}
+)
+
+
+</script>
+
+</body></html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>load</title>
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;}
+#box{width:500px;height:500px;border:1px solid red;padding:10px;float:left;display:inline;margin:10px;}
+
+#box1{width:500px;height:500px;border:1px solid blue;padding:10px;float:left;display:inline;margin:10px;}
+
+
+</style>
+</head>
+<body>
+<pre>
+载入远程 HTML 文件代码并插入至 DOM 中。
+load(url, [data], [callback])
+url:待装入 HTML 网页网址。
+data:发送至服务器的 key/value 数据。在jQuery 1.3中也可以接受一个字符串了。
+callback:载入成功时回调函数。
+
+</pre>
+
+<hr />
+
+<div id="box"></div>
+
+<div id="box1"></div>
+
+
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<script type="text/javascript">
+function z(id) { return document.getElementById(id)}
+
+$("#box").load("a.php", {name: "eric"}, function(){
+$("#box").append("+++++++++loaded");
+});
+
+$("#box1").load("a.txt", {limit: 25}, function(){			//POST发送
+
+});
+
+$("#box1").load("a.txt");		//GET发送
+
+
+</script>
+</body>
+</html>
+

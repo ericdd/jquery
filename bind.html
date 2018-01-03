@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>bind</title>
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;}
+#box{width:800px;height:100px;background:purple;padding:15px;color:#fff;}
+</style>
+</head>
+<body>
+<pre>
+bind( eventType [, eventData ], handler )
+</pre>
+
+
+<div id="box">bind()函数用于为每个匹配元素的一个或多个事件绑定事件处理函数。</div>
+
+
+<script type="text/javascript" src="jquery-1.7.js"></script>
+
+<script type="text/javascript">
+function z(id) { return document.getElementById(id)}
+
+$("#box").bind("click",{type: "togglePS", name:123}, function(e) {
+alert(e.data.type + "," + e.data.name);
+});
+
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>test</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+.tabEven { background: red; color:#fff;}
+.tabOdd { background: blue;color:#fff; }
+div{border:1px solid blue;margin-top:5px;}
+p{border:1px solid red;}
+.over{background:blue;color:#fff;}
+#dv{border:1px solid blue;margin-bottom:5px;}
+</style>
+</head>
+<body>
+
+<div class="panel" id="panel">welcome to jQuery!  panel</div>
+<div id='result'>用GET方式装入并执行一个远程JavaScript文件。result</div>
+<div class="a" id="loading"><a href="#">这是diva loading</a></div>
+<div class="b"  id="dv"><a href="#">这是dv</a></div>
+
+<table border="1" id="mytable" style="display:none;">
+<tr style="height:50px;"><td>TD #0</td><td>TD #1</td><td>TD #2</td></tr>
+<tr><td>TD #3</td><td>TD #4</td><td>TD #5</td></tr>
+<tr><td>TD #6</td><td>TD #7</td><td>TD #8</td></tr>
+</table>
+
+<form method="post" action="" id="form1" name="form1" onsubmit="">
+<input type="radio" name="one" value="1"/>   1
+<input type="radio" name="two" value="2"/>    2
+<input type="radio" name="three" value="3"/>     3
+<input type="text" id="name1" name="txt1" value=""/>
+<input type="text" id="name2" name="txt2" value=""/>
+<input type="button" id="btn1" value="   go    " onclick="" />
+<input type="button" id="btn2" value=" stop " onclick="" /> <br />
+<textarea id="content" name="content" rows="5" cols="80" onblur="alert(this.value)">初始值</textarea>
+<input type="submit" id="subform" name="subform" value="提 交"/>
+</form>
+<input type="button" id="go" value="   go    " onclick="" />
+<input type="button" id="stop" value=" stop " onclick="" /> <br />
+<p >p1</p>
+<p>p2</p>
+
+<div style="width:600px;height:100px;background:red;color:white" id="outdiv">
+外面的h4
+<h4 style="width:300px;height:50px;background:blue;color:white"  id="inh4">里面的h4</h4>
+</div>
+
+
+<script type="text/javascript">
+/* stop()
+停止所有在指定元素上正在运行的动画。       如果队列中有等待执行的动画，他们将被马上执行。
+返回值：jQuery
+示例：       点击Go之后开始动画,点Stop之后会在当前位置停下来
+ */
+
+$("#go").click(function(){
+  $("#form1").animate({ height: 'toggle' }, 3000);
+});
+
+// 当点击按钮后停止动画
+$("#stop").click(function(){
+  $("#form1").stop();
+});
+</script>
+
+</body></html>

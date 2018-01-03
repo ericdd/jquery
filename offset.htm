@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>offset</title>
+<meta charset="gb2312">
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{font-size:16px;font-family:tahoma;}
+#fu{background:pink;width:600px;height:300px;border:1px solid red;margin-top:10px;position:relative;}
+#son{color:#fff;background:blue;width:100px;height:100px;position:absolute;top:100px;left:100px;border:1px solid #fff;}
+</style>
+<link rel="stylesheet" type="text/css" href=""/>
+</head>
+
+<body>
+<xmp>
+ele.offset().left 的参照物是body
+obj.offsetLeft	的参照物是（有相对定位或绝对定位样式）的父元素
+
+var  offset=$("#son").offset() ;
+$("#son").click(function(){
+var s1 = $(this).width()+" "+$(this).height();
+var s2=offset.left +" "+offset.top;
+$("#content").html(s1+","+s2)
+}
+)
+</xmp>
+<hr />
+<textarea id="content" name="content" rows="3" cols="80"></textarea>
+<div id="fu">fu
+<div id="son">son</div>
+</div>
+
+
+<script type="text/javascript">
+var  offset=$("#son").offset() ;
+$("#son").click(function(){
+var s1 = $(this).width()+" "+$(this).height();
+var s2=offset.left +" "+offset.top;
+$("#content").html(s1+","+s2)
+}
+)
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

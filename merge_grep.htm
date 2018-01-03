@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>test</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+
+
+var arr1=$.grep( [0,1,2,4,5,6], function(i){ return i > 2; });
+var arr2=$.merge( [0,1,2], [2,3,4] )			 //合并两个数组，删除其中重复的2
+var arr3=$.merge( [3,2,1], [4,3,2] )      //合并两个数组，删除重复的3和2。
+alert(arr1);
+alert(arr2);
+alert(arr3);
+</script>
+
+</body></html>

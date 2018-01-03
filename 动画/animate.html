@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>JqueryTable隔行变色 http://www.51obj.cn/</title>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+
+<style type="text/css">
+#spanel,#showHide,#fadeout { width:200px; height:100px; background-color:red; position:relative; cursor:pointer; font-size:12px;margin-top:10px; color:#fff;}
+
+</style>
+</head>
+<body>
+<input type="button" id="btn1" value="确 定" onclick="" />
+
+<div id="showHide">click</div>
+
+<div id="spanel"><h5>hello</h5> </div>
+
+<div id="fadeout">fadeout淡出效果</div>
+
+<script type="text/javascript">
+
+//用toggle,hide(),show()实现显示与隐藏
+$("#showHide").toggle(
+function(){$(this).hide(600)},
+function() { $(this).show(600); }
+);
+
+//使用animate实现简单的动画效果
+$("#spanel").bind("click",function(){
+$(this).animate({left:"300px",top:"300",height:"300px"},3000);
+});
+
+
+$("#btn1").click(
+function(){$("#fadeout").toggle(600)}
+);
+</script>
+</body>
+</html>
+

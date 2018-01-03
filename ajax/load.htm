@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>load</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:12px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+
+div{border:1px solid blue;margin-top:5px;}
+p{background:purple;color:#fff;padding:10px;}
+
+#dv{border:1px solid blue;margin-bottom:5px;}
+
+</style>
+</head>
+<body>
+<pre>
+载入远程 HTML 文件代码并插入至 DOM 中。
+默认使用 GET 方式 - 传递附加参数时自动转换为 POST 方式。jQuery 1.2 中，可以指定选择符，来筛选载入的 HTML 文档，DOM 中将仅插入筛选出的 HTML 代码。
+load(url, [data], [callback])
+
+</pre>
+
+<input type="button" id="btn1" value="加载a.php" onclick="" />
+<input type="button" id="btn2" value="加载a.txt" onclick="" />
+<input type="button" id="btn3" value="加载a.html" onclick="" />
+
+<p id="p1">第一个<strong>段落</strong>P </p>
+<p id="p2">第二个<strong>段落</strong>P</p>
+
+<p id="h41">
+h41
+</p>
+
+<script type="text/javascript">
+
+$("#btn1").click(
+function(){
+$("#p1").load("a.php");
+}
+)
+
+$("#btn2").click(
+function(){$("#p2").load("a.txt",{name:Math.random()});}
+)
+
+$("#btn3").click(
+function(){
+$("#h41").load("a.html");
+}
+)
+
+</script>
+
+</body></html>
+
+

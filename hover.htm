@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>test</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+
+p{border:1px solid red;}
+h4.over{background:blue;color:#fff;width:900px;}
+h4.out{background:#eee;color:blue;}
+
+</style>
+</head>
+<body>
+<xmp>
+
+</xmp>
+
+<h4  style="border:1px solid red;">第一个h4</h4>
+<h4 style="border:1px solid red;">	 第二个h4</h4>
+
+<script type="text/javascript">
+
+$("h4").hover(function(){
+$(this).addClass("over");
+$(this).css("background","green")
+},
+function(){
+$(this).css({background:"#eee",color:"blue"});
+$(this).addClass("out");
+});
+
+</script>
+
+</body></html>

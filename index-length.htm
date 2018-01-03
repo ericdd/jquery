@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>test</title>
+<meta charset="gb2312">
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{font-family:tahoma;font-size:15px;}
+
+</style>
+</head>
+
+<body>
+<xmp>
+index(obj)说明：返回对象索引
+参数：obj (Object): 要查找的对象
+
+size()   Length
+说明：当前匹配对象的数量，两者等价
+
+</xmp>
+<hr />
+
+<div id="test1">第一个div</div>
+<div id="test2">第二个div</div>
+
+<a href="#" id="test" onClick="jq1()">index(obj)</a>&nbsp;&nbsp;
+<a href="#" id="test" onClick="jq2()">size()   Length</a>&nbsp;&nbsp;
+<a href="#" id="test" onClick="jq22('a')">size()   Length</a>&nbsp;&nbsp;
+
+
+<script type="text/javascript">
+
+function jq1(){alert($("div").index($('#test1')));alert($("div").index($('#test2')));}
+function jq2(){alert($("div").length);}
+function jq22(tag){alert($(tag).length);}
+
+</script>
+
+</body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

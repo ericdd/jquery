@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>$.get</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:12px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+.panel{background:blue;padding:10px;color:#fff;}
+p{background:purple;padding:10px;color:#fff;}
+
+#content{width:600px;height:160px;}
+
+</style>
+</head>
+<body>
+<pre>
+这是一个简单的 GET 请求功能以取代复杂 $.ajax 。请求成功时可调用回调函数。如果需要在出错时执行函数，请使用 $.ajax。
+</pre>
+
+<div class="panel">welcome to jQuery!</div>
+
+<p id="result">result</p>
+<p>p1</p>
+
+<form method="post" action="" id="form1" onsubmit="">
+
+<input type="text" id="name1" name="txt1" value="aaa"/>
+<input type="text" id="name2" name="txt2" value="bbb"/>
+
+<input type="button" id="btn1" name="btn1" value="确 定1" onclick="" />
+<input type="button" id="btn2" name="btn2" value="确 定2" onclick="" />
+
+<br />
+<textarea id="content" name="content"></textarea>
+
+</form>
+
+<script type="text/javascript">
+
+$("input[type=button]").click(function(){
+
+$.get(
+"test.php",
+function(data) {
+$(".panel").html(data);
+},
+"text"
+);
+
+$.get(
+"test.php",
+function(data){
+$("#result").append( " Name: " + data.name ).append( ", Time: " + data.time );
+},
+"json"
+);
+
+});
+
+</script>
+
+</body></html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>test</title>
+<meta charset="gb2312">
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{font-family:tahoma;font-size:15px;}
+p,div{border:1px solid blue;}
+div{border:1px solid #999;}
+</style>
+</head>
+
+<body>
+<xmp>
+$(elem)
+说明：限制jQuery作用于一个特定的dom元素，这个函数也接受xml文档和windows对象
+参数： elem：通过jQuery对象压缩的DOM元素
+$(elems)
+说明：限制jQuery作用于一组特定的DOM元素
+参数： elem：一组通过jQuery对象压缩的DOM元素
+
+</xmp>
+<hr />
+<input type="button" id="fraudcheckbtn" value="确 定" onclick="" />
+<p>one</p>
+
+<div>
+<p><span>DIV里面的第一个P</span></p>
+<p><strong>DIV里面的第二个P</strong></p>
+<p><a href="#" title="">DIV里面的第三个P</a></p>
+</div>
+
+<p>three</p>
+
+<a href="1.htm" id="test" title="jquery自1.2.3版本取消了直接的href方法" onClick="jq()">jQuery</a><br /><br />
+
+<a href="#" id="test1" onClick="jq1()">jq1</a><br /><br />
+<a href="#" id="test11" onClick="jq11()">jq11</a><br /><br />
+
+<script type="text/javascript">
+
+function jq(){
+   alert($("#test").attr("href"));
+   $("#test").attr("href","2.html"); $("#test").attr("title","已上三个方法都不再被新版本的jquery支持");
+   alert($("#test").attr("href"));
+}
+
+function jq1(){  alert($(document).find("div > p").html());
+
+}
+
+$("#fraudcheckbtn").attr("disabled", 0);
+
+
+</script>
+
+</body></html>
+
+
+
+

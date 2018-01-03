@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>$方法与jquery有冲突的解决方法</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+
+*{list-style:none;font-size:12px;font-family:tahoma;}
+#box{width:600px;height:200px;background:#011E58;padding:20px;}
+#name{width:300px;margin:10px 0;}
+</style>
+</head>
+<body>
+
+<xmp>
+其实无论你引用多少个可能与jquery有冲突的库，使用jquery语句块，都可以避免jquery中的$与其他库中的$之间的冲突。
+
+(function($){
+//此时在这个语句块中使用的都jquery.js中定义的$.
+$('#msg').hide();
+})(jQuery)             //是小写的j,不是大写的J
+
+因为jQuery这个名称只有jquery中有。
+
+http://docs.jquery.com/Using_jQuery_with_Other_Libraries
+
+</xmp>
+
+<input type="text" id="name" name="name" value="" maxlength=""/><br />
+
+<input type="button" id="jbtn" value="jquery方法" onclick="" />
+<input type="button" id="cbtn" value="自定义方法" onclick="" />
+
+<div id="box">使用jquery语句块，都可以避免jquery中的$与其他库中的$之间的冲突。</div>
+
+
+<script type="text/javascript">
+
+function $(id){ return document.getElementById(id)}
+
+//JQuery.noConflict();
+
+(function($){
+
+document.write($+"<br />");
+
+$('#box').css({ color: "red", background: "blue", height:"200px", border:"7px solid red" });
+
+$("#jbtn").bind("click", function(){
+$("#name").val("这是jquery的$方法："+Math.random());
+$('#box').css({ color: "red", background: "#000", height:"200px", border:"7px solid red" });
+});
+
+})(jQuery)
+
+
+
+$("cbtn").onclick=function(){
+$("name").value="这是自这定义的$方法： "+Math.random();
+$("box").style.cssText="background:#000;font-size:20px;color:yellow;border:7px dotted red;"
+
+}
+
+
+</script>
+
+</body></html>

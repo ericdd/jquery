@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>test</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+div.button{margin:3px; height:30px;line-height:30px;width:100px; text-align:center; float:left; cursor:pointer;border:2px solid black; font-weight:bold; }
+#sliding{display:none; width:100px;height:200px;background:red;color:#fff;}
+</style>
+</head>
+<body>
+
+<div class="button">点击我</div>
+<div id="sliding">Sliding test!</div>
+
+<script type="text/javascript">
+/* 回调函数 */
+function f(){
+$('#sliding').slideUp(2000, function(){ $('div.button').css({ borderStyle:"outset", cursor:"auto" }); });
+}
+
+$(function(){
+ $("div.button").click(function () {
+   $(this).css({ borderStyle:"inset", cursor:"wait" });
+   $('#sliding').slideDown('slow', f);
+ });
+});
+
+
+</script>
+
+</body></html>
+
+

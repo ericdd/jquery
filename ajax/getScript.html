@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>getScript</title>
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;}
+</style>
+</head>
+<body>
+<pre>
+$.getScript(url,callback)
+url:待载入 JS 文件地址。
+callback:成功载入后回调函数。
+
+这个方法是jquery自身提供的一个用于动态加载js的方法。当网站需要加载大量js时，动态的加载js就是一个比较好的方法，当需要某个功能时再将相应的js加载进来。
+</pre>
+
+
+<p>
+<input type="button" id="btn" value="确 定"/>
+
+</p>
+<p><input type="button" id="btn1" value="调用远程js的函数"/></p>
+
+
+<script type="text/javascript" src="../jquery-1.7.js"></script>
+<script type="text/javascript">
+function t(id) { return document.getElementById(id)}
+
+
+t("btn").onclick = function() {
+
+var url = 'http://www.xxzhinan.com/js/t.js';
+
+$.getScript(url, function() {
+alert(ajax);
+
+})
+
+}
+
+t("btn1").onclick = function() {
+try{
+alert(coverlayer);
+} catch(e) {
+alert("函数未定义");
+}
+
+}
+
+
+</script>
+</body>
+</html>
+

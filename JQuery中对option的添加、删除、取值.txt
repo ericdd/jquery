@@ -1,0 +1,19 @@
+
+
+jQuery获取Select选择的Text和Value:
+1. $("#select_id").change(function(){//code...});    //为Select添加事件，当选择其中一项时触发
+2. var checkText=$("#select_id").find("option:selected").text();   //获取Select选择的Text
+3. var checkValue=$("#select_id").val();   //获取Select选择的Value
+4. var checkIndex=$("#select_id ").get(0).selectedIndex;   //获取Select选择的索引值
+5. var maxIndex=$("#select_id option:last").attr("index");   //获取Select最大的索引值
+
+jQuery添加/删除Select的Option项：
+1. $("#select_id").append("<option value='Value'>Text</option>");   //为Select追加一个Option(下拉项)
+2. $("#select_id").prepend("<option value='0'>请选择</option>");   //为Select插入一个Option(第一个位置)
+3. $("#select_id option:last").remove();   //删除Select中索引值最大Option(最后一个)
+4. $("#select_id option[index='0']").remove();   //删除Select中索引值为0的Option(第一个)
+5. $("#select_id option[value='3']").remove();   //删除Select中Value='3'的Option
+5. $("#select_id option[text='4']").remove();   //删除Select中Text='4'的Option
+内容清空：
+$("#charCity").empty();
+

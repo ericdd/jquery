@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>test</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+.tabEven { background: red; color:#fff;}
+.tabOdd { background: blue;color:#fff; }
+div{border:1px solid blue;margin-top:5px;}
+p{border:1px solid red;}
+.over{background:blue;color:#fff;}
+#dv{border:1px solid blue;margin-bottom:5px;}
+</style>
+</head>
+<body>
+<xmp>
+
+</xmp>
+<div class="panel">welcome to jQuery!</div>
+<div id='result'>用GET方式装入并执行一个远程JavaScript文件。</div>
+
+
+<form method="post" action="" id="form1" name="form1" onsubmit="">
+<input type="radio" name="one" value="1"/>	 1
+<input type="radio" name="two" value="2"/>	  2
+<input type="radio" name="three" value="3"/>	 3
+<input type="text" id="name1" name="txt1" value=""/>
+<input type="text" id="name2" name="txt2" value=""/>
+<input type="button" id="btn1" value="确 定1" onclick="" />
+<input type="button" id="btn2" value="确 定2" onclick="" /> <br />
+<textarea id="content" name="content" rows="5" cols="80" onblur="alert(this.value)"></textarea>
+<input type="submit" id="subform" name="subform" value="提 交"/>
+</form>
+
+
+<script type="text/javascript">
+
+alert($("#form1>input").get(1).value);	  //	  以下两句等同
+alert($("#form1>input:eq(1)").val());			   //匹配的元素集合缩减为一个元素。这个元素在匹配元素集合中的位置变为0，而集合长度变成1。
+alert($("#form1>input:eq(1)").length);
+alert($("#form1>input").get()[1].value);		 //get() 		 取得所有匹配的（DOM）元素集合
+
+
+
+</script>
+
+</body></html>

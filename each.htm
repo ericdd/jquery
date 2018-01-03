@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>each</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;}
+</style>
+</head>
+<body>
+
+<xmp>
+each() 方法规定为每个匹配元素规定运行的函数。
+each有两种写法，
+Jquery对象.each(fu);
+$.each(Jquery对象, fu)
+
+jquery如何退出each循环的?
+
+在回调函数里return false即可，大多数jq的方法都是如此的
+===================================
+返回 'false' 将停止循环 (就像在普通的循环中使用 'break')。
+返回 'true' 跳至下一个循环(就像在普通的循环中使用'continue')。
+
+jQuery.each( collection, callback(indexInArray, valueOfElement) )
+collectionThe object or array to iterate over.
+callback(indexInArray, valueOfElement)The function that will be executed on every object.
+
+</xmp>
+
+<ul id="ul">
+<li>a</li>
+<li>b</li>
+<li>c</li>
+<li>d</li>
+<li>e</li>
+<li>f</li>
+</ul>
+
+
+
+<script type="text/javascript">
+
+$("#ul li").each(function(i, ele){
+
+document.write(i +": "+ ele.innerHTML+"<br />");
+
+});
+
+document.write("<hr />");
+
+$.each( $("#ul li"), function(i, ele){
+document.write("Index #" + i + " = " + ele.innerHTML+"<br />");
+document.write("Index #" + i + " = " + this.innerHTML+"<br />");
+});
+
+document.write("<hr />");
+
+$.each( ['a','b','c'], function(i, l){
+document.write("Index #" + i + " = " + l+"<br />");
+});
+
+document.write("<hr />");
+
+$.each( { name: "John", lang: "JS" }, function(k, v){
+
+document.write( "Key = " + k + ", Value = " + v +"<br />");
+
+});
+
+
+</script>
+
+</body></html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>slideUp</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+div.button{margin:3px; height:30px;line-height:30px;width:100px; text-align:center; float:left; cursor:pointer;border:2px solid black; font-weight:bold; }
+.box{width:200px;height:500px;border:1px solid #ccc;background:blue;color:#fff;float:left;display:inline;margin:5px 0 0;}
+input[type=button]{line-height:25px;}
+</style>
+</head>
+<body>
+<input type="button" id="show" value="逐个展开" onclick="" />
+<input type="button" id="hide" value="逐个收起" onclick="" />
+
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+
+<script type="text/javascript">
+
+
+$(".box").slideUp("slow");
+
+$("#show").bind("click",function(){
+$(".box").eq(0).slideDown("slow",function(){$(".box").eq(1).slideDown("slow",function(){$(".box").eq(2).slideDown("slow")})}
+
+);
+
+});
+
+$("#hide").bind("click",function(){
+$(".box").eq(2).slideUp("slow",function(){$(".box").eq(1).slideUp("slow",function(){$(".box").eq(0).slideUp("slow")})}
+
+);
+
+});
+
+
+</script>
+
+</body></html>
+
+

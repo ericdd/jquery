@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>size</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+
+</style>
+</head>
+<body>
+<pre>
+jQuery 对象中元素的个数
+</pre>
+
+
+<form method="post" action="" id="form1" name="form1" onsubmit="">
+<input type="radio" name="one" value="1"/>   1
+<input type="radio" name="two" value="2"/>    2
+<input type="radio" name="three" value="3"/>     3
+<input type="text" id="name1" name="txt1" value=""/>
+<input type="text" id="name2" name="txt2" value=""/>
+<input type="button" id="btn1" value="确 定1" onclick="" />
+<input type="button" id="btn2" value="确 定2" onclick="" /> <br />
+<textarea id="content" name="content" rows="5" cols="80" onblur="alert(this.value)"></textarea>
+<input type="submit" id="subform" name="subform" value="提 交"/>
+</form>
+
+
+<script type="text/javascript">
+var jo=$("#form1>input:lt(4)")	;
+alert(jo.length);
+alert(jo.size());
+
+</script>
+
+</body></html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>test</title>
+<meta charset="gb2312">
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{font-family:tahoma;font-size:15px;}
+p,div{border:1px solid blue;}
+div{border:1px solid red;}
+</style>
+</head>
+
+<body>
+<xmp>
+after(html)  在匹配元素后插入一段html
+after(elem)  after(elems)  将指定对象elem或对象组elems插入到在匹配元素后
+</xmp>
+<hr />
+
+<div>
+<p id="p1">DIV里面的第一个P</p>
+<p>DIV里面的第二个P</p>
+</div>
+
+
+
+<a href="#" id="test1" onClick="jq()">after(html)</a><br /><br />
+<a href="#" id="test2" onClick="jq1()">after(elem)</a><br /><br />
+<a href="#" id="test3" onClick="jq11()">jq11()</a>&nbsp;&nbsp;
+
+
+<script type="text/javascript">
+
+function jq(){$("#test1").after("<b>Hello</b>");} //把<b>Hello</b>放入test1元素后面
+
+function jq1(){$("a").after($("#p1"));} //把p1元素放入每个a标签后面
+
+function jq11(){$("#test3").after($("#p1"));} //把p1元素放入test3元素后面
+
+
+
+</script>
+
+</body></html>
+
+
+
+

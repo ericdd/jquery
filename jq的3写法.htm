@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>test</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+.tabEven { background: red; color:#fff;}
+.tabOdd { background: blue;color:#fff; }
+div{border:1px solid blue;margin-top:5px;}
+p{border:1px solid red;}
+.over{background:blue;color:#fff;}
+#dv{border:1px solid blue;margin-bottom:5px;}
+</style>
+</head>
+<body>
+<xmp>
+//$( fn )
+
+$(function(){
+alert(1);                    //   要在DOM就绪时执行的函数
+});
+
+jQuery(function($) {
+alert(2);                          //   要在DOM就绪时执行的函数
+});
+
+
+(function($){
+$.methon=function(a){alert(a);}
+$.methon(33)
+})($);
+
+</xmp>
+
+
+<script type="text/javascript">
+
+$(function(){
+alert(1);
+});
+
+jQuery(function($) {
+alert(2);
+});
+
+
+(function($){
+$.methon=function(a){alert(a);}
+$.methon(33)
+})($);
+</script>
+
+</body></html>

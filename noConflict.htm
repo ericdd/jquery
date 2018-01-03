@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>test</title>
+<head>
+<script type="text/javascript">
+function $(id){ return document.getElementById(id)}
+</script>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+.tabEven { background: red; color:#fff;}
+.tabOdd { background: blue;color:#fff; }
+div{border:1px solid blue;margin-top:5px;}
+p{border:1px solid red;}
+.over{background:blue;color:#fff;width:600px;}
+.out{background:#aaa;color:purple;font-size:16px;font-weight:bold;}
+#dv{border:1px solid blue;margin-bottom:5px;}
+</style>
+</head>
+<body>
+<xmp>
+很多时候我们自己定义了$(id)方法来获取一个元素，或者其他的一些js类库如prototype也都定义了$方法，
+如果同时把这些内容放在一起就会引起变量方法定义冲突，Jquery对此专门提供了方法用于解决此问题。
+使用jquery中的jQuery.noConflict();方法即可把变量$的控制权让渡给第一个实现它的那个库或之前自定义的$方法。
+之后应用 Jquery的时候只要将所有的$换成jQuery即可，如原来引用对象方法$("#msg")改为jQuery("#msg")。
+</xmp>
+<div class="panel">welcome to jQuery!</div>
+
+<h4 style="width:600px;height:50px;background:red;color:white;"  id="h41">第一个标题h4</h4>
+<h4 style="width:300px;height:50px;background:blue;color:white;float:left;margin-right:20px;" id="h42">第二个标题h4</h4>
+
+<table border="1" id="table1">
+<tr style="height:30px;"><td>TD #0</td><td>TD #1</td><td>TD #2</td></tr>
+<tr><td>TD #3</td><td>TD #4</td><td>TD #5</td></tr>
+<tr><td>TD #6</td><td>TD #7</td><td>TD #8</td></tr>
+<tr><td>TD #9</td><td>TD #10</td><td>TD #10</td></tr>
+</table>
+
+<form method="post" action="" id="form2" name="form2" onsubmit="">
+<input type="radio" name="two" value="1" checked/>   4
+<input type="radio" name="two" value="2"/>    5
+<input type="radio" name="two" value="3"/>     6
+<input type="checkbox" name="abc" value="a"/>aa
+<input type="checkbox" name="abc" value="b" checked/>bb
+<input type="checkbox" name="abc" value="c"/>cc
+<input type="text" id="name3" name="txt3" value="456" class="txt2"/>
+<input type="text" id="name3" name="txt4" value="" class="txt2"/>
+<input type="button" id="btn3" value="确 定3" onclick="" />
+<input type="button" id="btn4" value="确 定4" onclick="" />
+<input type="submit" id="subform1" name="subform1" value="提 交"/>
+</form>
+
+
+
+<script type="text/javascript">
+
+jQuery.noConflict();
+jQuery("#table1").css("background","pink");       // 开始使用jQuery
+$("form2").style.background = '#fff';              // 使用其他库的 $()
+
+</script>
+
+</body></html>
+
+

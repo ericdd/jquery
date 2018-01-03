@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>test</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+
+</style>
+</head>
+<body>
+<pre>
+jQuery.fn.extend(object);给jQuery对象添加方法。
+</pre>
+
+<form method="post" action="" id="form1" name="form1" >
+<input type="radio" name="one" value="1" checked/>   1
+<input type="radio" name="two" value="2"/>    2
+<input type="radio" name="three" value="3"/>     3
+<br />
+
+密码：<input type="password" id="pw1" name="pw1"/>
+
+<input type="checkbox" name="ch1" value="v1"/>	1
+<input type="checkbox" name="ch2" value="v2" checked/> 2
+<input type="checkbox" name="ch3" value="v3"/>	 3
+
+<input type="text" id="name1" name="txt1" value=""/>
+<input type="text" id="name2" name="txt2" value=""/>
+<input type="button" id="btn1" value="确 定1" onclick="" />
+<input type="button" id="btn2" value="确 定2" onclick="" /> <br />
+<textarea id="content" name="content" rows="5" cols="50" onblur="alert(this.value)">初始值</textarea>
+<input type="submit" id="subform" name="subform" value="提 交"/>
+</form>
+
+
+<script type="text/javascript">
+// $.fn.extend( prop )    自定义 function
+
+jQuery.fn.extend({
+   check: function() {                                                                              // 自定义 check function
+     return this.each(function() { this.checked = true; });
+   },
+   uncheck: function() {                                                                          // 自定义 uncheck function
+     return this.each(function() { this.checked = false; });
+   }
+});
+$("input[type=checkbox]").check();               // 将所有的 checkbox 改变为 已选中
+$("input[type=radio]").uncheck();                  // 将所有的 radio 改变为 未选中
+
+
+
+
+</script>
+
+</body></html>

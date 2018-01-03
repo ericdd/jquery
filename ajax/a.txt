@@ -1,0 +1,5 @@
+load(url, params, callback) 装入一个远程HTML内容到一个DOM结点
+
+<h1>load(url, params, callback) 装入一个远程HTML内容到一个DOM结点</h1>
+
+load(url, params, callback) 装入一个远程HTML内容到一个DOM结点

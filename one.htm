@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>one</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+
+p{color:#fff;background:red;padding:15px;}
+</style>
+</head>
+<body>
+<pre>
+one
+为每一个匹配元素的特定事件（像click）绑定一个一次性的事件处理函数。
+在每个对象上，这个事件处理函数只会被执行一次。其他规则与bind()函数相同。
+
+</pre>
+
+
+<form method="post" action="" id="form1" name="form1" onsubmit="">
+
+<input type="radio" name="one" value="1"/>   1
+<input type="radio" name="two" value="2"/>    2
+
+<input type="text" id="name1" name="txt1" value=""/>
+<input type="text" id="name2" name="txt2" value=""/>
+
+<input type="submit" id="subform" name="subform" value="提 交"/>
+</form>
+
+<p >p1</p>
+<p>p2</p>
+
+<p onclick="alert('Hello,world');">Hello</p>
+<p onclick="alert('你好');">Hello</p>
+
+<script type="text/javascript">
+
+$("p").one("click", function(){  alert( $(this).text()   );  });		//为每一个匹配元素的特定事件（像click）绑定一个事件处理器函数。
+
+$("#form1").submit( function() {alert($("input",this).length);} );
+
+</script>
+
+</body></html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>wrap</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+div{border:1px solid blue;margin-top:5px;}
+p{border:1px solid red;}
+
+h4{width:600px;padding:15px;background:#ccc;}
+
+
+</style>
+</head>
+<body>
+<pre>
+
+</pre>
+
+<input type="button" id="btn" value="确 定"/>
+
+<span id="wraped">wrap me</span>
+
+<script type="text/javascript">
+
+$("#btn").click(function() {
+
+	$("#wraped").wrap("<h4></h4>");
+
+
+});
+
+
+</script>
+
+</body></html>

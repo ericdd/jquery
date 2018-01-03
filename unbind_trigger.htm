@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>unbind trigger</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+
+p{background:#000;color:#fff;padding:15px;}
+
+</style>
+</head>
+<body>
+
+
+<p id="p1">第一个段落P </p>
+<p id="p2">第二个段落P</p>
+<h4 style="width:600px;height:100px;background:red;color:white">第一个段落h4</h4>
+<h4 style="width:300px;height:50px;background:blue;color:white">第二个段落h4</h4>
+
+
+<script type="text/javascript">
+
+$("p").bind("click",function(){alert(this.innerHTML);})
+$("p").bind("mouseover",function(){alert("mouseover");})
+$("#p1").unbind()							 //试试注释这行
+$("p").unbind( "mouseover" ) 	 ;		 //反绑定，从每一个匹配的元素中删除绑定的事件。如果没有参数，则删除所有绑定的事件。
+$("#p1").trigger("click");
+$("#p2").trigger("click");
+$("#p2").trigger("mouseover");
+
+</script>
+
+</body></html>

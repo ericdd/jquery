@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>test</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+
+div{border:1px solid blue;margin-top:5px;}
+p{border:1px solid red;}
+
+#dv{border:1px solid blue;margin-bottom:5px;}
+</style>
+</head>
+<body>
+<xmp>
+</xmp>
+
+<p id="p1">第一个<strong>段落</strong>P </p>
+<p id="p2">第二个<strong>段落</strong>P</p>
+<h4 style="width:600px;height:50px;background:red;color:white;"  id="h41">第一个标题h4</h4>
+<h4 style="width:300px;height:50px;background:blue;color:white;float:left;margin-right:20px;" id="h42">第二个标题h4</h4>
+
+ <form id="testform">
+ <input type="text" class="clear" value="Always cleared" />
+ <input type="text" class="clear once" value="Cleared only once" />
+ <input type="text" value="Normal text" />
+</form>
+
+
+<script type="text/javascript">
+/*
+ 我们可以使用jQuery的data方法来为页面中的某个元素存储数据：
+removeData(name)       在元素上移除存放的数据。     与$(...).data(name, value)函数作用相反
+*/
+$('p').data('abc', '要存储的数据');
+alert( $('p').data('abc'));
+$('p').removeData("abc");
+alert( $('p').data('abc'));
+
+ $(function() {
+ $('#testform input.clear').each(function(){
+   $(this).data( "txt", $.trim($(this).val()) );
+ }).focus(function(){
+   if ( $.trim($(this).val()) === $(this).data("txt") ) {
+     $(this).val("");
+   }
+ }).blur(function(){
+   if ( $.trim($(this).val()) === "" && !$(this).hasClass("once") ) {
+     $(this).val( $(this).data("txt") );
+   }
+ });
+});
+</script>
+
+</body></html>
+
+

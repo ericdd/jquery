@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>clone</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+
+*{list-style:none;font-size:12px;font-family:tahoma;}
+.box{width:600px;background:blue;margin:10px 0;color:#fff;padding:5px;}
+.p{border:1px solid green;padding:10px;}
+</style>
+</head>
+<body>
+
+<xmp>
+$(selector).clone(includeEvents)
+可选。布尔值。规定是否复制元素的所有事件处理。
+默认地，副本中不包含事件处理器。
+
+clone() 方法生成被选元素的副本，包含子节点、文本和属性。
+
+</xmp>
+
+
+<div class="box">$(selector).clone(includeEvents)</div>
+
+
+<script type="text/javascript">
+
+
+
+(function($){
+
+$("body").append($(".box").clone());
+
+$(".box").after("<p class='p'>hello world</p>");
+
+
+})(jQuery)
+
+
+
+</script>
+
+</body></html>

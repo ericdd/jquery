@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>getScript</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:12px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+.panel{background:blue;padding:10px;color:#fff;}
+p{background:purple;padding:10px;color:#fff;}
+
+#content{width:600px;height:160px;}
+
+</style>
+</head>
+<body>
+<pre>
+$.getScript
+通过 HTTP GET 请求载入并执行一个 JavaScript 文件。
+jQuery.getScript(url, [callback])
+url:待载入 JS 文件地址。
+callback:成功载入后回调函数
+
+</pre>
+
+<div class="panel">welcome to jQuery!</div>
+
+<p id="result">result</p>
+<p id="loading">loading</p>
+
+<form method="post" action="" id="form1" onsubmit="">
+
+<input type="text" id="name1" name="txt1" value="aaa"/>
+<input type="text" id="name2" name="txt2" value="bbb"/>
+
+<input type="button" id="btn1" name="btn1" value="确 定1" onclick="" />
+<input type="button" id="btn2" name="btn2" value="确 定2" onclick="" />
+
+<br />
+<textarea id="content" name="content"></textarea>
+
+</form>
+
+<script type="text/javascript">
+
+$("input[type=button]").click(function(){
+$.getScript("a.js",
+function(){
+alert("成功载入js文件并执行.");
+}
+);
+
+});
+
+$("#loading").ajaxStart(function(){
+$(this).html("开始发送ajax请求.");
+alert($(this).html());		//先执行这行	,试试把这个函数放到$.post()后面
+});
+
+
+$("#result").ajaxComplete(function(event,request, settings){
+$(this).append("请求完成" + settings);
+});
+
+$("div.panel").ajaxSuccess(
+function(request, settings){
+// alert(request.readyState );
+alert(settings.responseText);
+$(this).html("<i>Successful Request!</i>");
+}
+);
+
+</script>
+
+</body></html>

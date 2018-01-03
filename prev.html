@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>prev</title>
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;}
+.box{width:600px;padding:10px;margin:20px;padding:20px; background:blue;color:#fff;}
+</style>
+</head>
+<body>
+
+<pre>
+$("#box3").prev("#box1")会返回null;
+要取得box1，要用$("#box3").prevAll("#box1")
+</pre>
+
+<hr />
+
+<div class="box" id="box1">aaa</div>
+<div class="box" id="box2">bbb</div>
+<div class="box" id="box3">cc</div>
+
+
+<input type="button" id="btn" value="确 定"/>
+
+<script type="text/javascript" src="jquery-1.7.js"></script>
+
+<script type="text/javascript">
+
+document.title = $("#box3").prevAll("#box1").html();
+
+</script>
+</body>
+</html>
+

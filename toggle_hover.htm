@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>test</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+.tabEven { background: red; color:#fff;}
+.tabOdd { background: blue;color:#fff; }
+div{border:1px solid blue;margin-top:5px;}
+p{border:1px solid red;}
+.over{background:blue;color:#fff;}
+#dv{border:1px solid blue;margin-bottom:5px;}
+</style>
+</head>
+<body>
+
+<div class="panel" id="panel">welcome to jQuery!  panel</div>
+<div id='result'>用GET方式装入并执行一个远程JavaScript文件。result</div>
+<div class="a" id="loading"><a href="#">这是diva loading</a></div>
+<div class="b"  id="dv"><a href="#">这是dv</a></div>
+
+<table border="1" id="mytable">
+<tr style="height:50px;"><td>TD #0</td><td>TD #1</td><td>TD #2</td></tr>
+<tr><td>TD #3</td><td>TD #4</td><td>TD #5</td></tr>
+<tr><td>TD #6</td><td>TD #7</td><td>TD #8</td></tr>
+</table>
+
+
+<form method="post" action="" id="form1" name="form1" onsubmit="" style="border:2px solid red;width:500px;float:left;margin-right:30px;padding:10px;">
+<input type="radio" name="one" value="1"/>   1	<input type="radio" name="two" value="2"/>    2	<input type="radio" name="three" value="3"/>     3
+<br />
+密码：<input type="password" id="pw1" name="pw1"/>
+<input type="checkbox" name="ch1" value="v1"/>	1	<input type="checkbox" name="ch2" value="v2"/> 2	  <input type="checkbox" name="ch3" value="v3"/>	 3
+<input type="text" id="name1" name="txt1" value=""/>
+<input type="text" id="name2" name="txt2" value=""/>
+<input type="button" id="btn1" value="确 定1" onclick="" />
+<input type="button" id="btn2" value="确 定2" onclick="" /> <br />
+<textarea id="content" name="content" rows="5" cols="50" onblur="alert(this.value)">初始值</textarea>
+<input type="submit" id="subform" name="subform" value="提 交"/>
+</form>
+
+<form method="post" action="" id="form2" name="form2" onsubmit="" style="border:2px solid blue;width:500px;padding:10px">
+<select id="sele" name="sele" style="width:100px;">
+<option value="" selected="selected">0</option>
+<option value="">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option>
+</select>
+<input type="radio" name="four" value="4"/>   4	<input type="radio" name="five" value="5"/>    5	<input type="radio" name="six" value="6"/>     6
+<br />
+密码：<input type="password" id="pw2" name="pw2"/>
+<input type="checkbox" name="ch4" value="v4"/>	4	<input type="checkbox" name="ch5" value="v5"/> 5	  <input type="checkbox" name="ch6" value="v6"/>	 6
+<input type="text" id="name3" name="txt3" value=""/>
+<input type="text" id="name4" name="txt4" value=""/>
+<input type="button" id="btn3" value="确 定3" onclick="" />
+<input type="button" id="btn4" value="确 定4" onclick="" /> <br />
+<textarea id="content2" name="content" rows="3" cols="50">初始值2</textarea>
+<input type="submit" id="subform2" name="subform2" value="提 交2"/>
+</form>
+
+
+<a href="http://www.2345.com/" target="_blank" id="a2">http://www.2345.com/</a>
+<input type="button" id="btn3" value="确 定" />
+
+
+
+<script type="text/javascript">
+
+
+$("#form1").hover(function(){
+  $(this).addClass("over");
+},function(){
+ $(this).removeClass("over");
+});
+
+$("#form2").toggle(function(){
+  $(this).addClass("over");
+},function(){
+ $(this).removeClass("over");
+});
+
+
+</script>
+
+</body></html>

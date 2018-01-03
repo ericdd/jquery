@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>test</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+.tabEven { background: red; color:#fff;}
+.tabOdd { background: blue;color:#fff; }
+
+.accordion2 { width: 480px;   border: solid 1px #c4c4c4}
+.accordion2 h3 {cursor: pointer;margin:0;background: #e9e7e7 url(arrow-square.gif) no-repeat right -47px;  padding: 5px 15px;
+border: solid 1px #c4c4c4;  border-bottom: none; font-size:14px;}
+.accordion2 h3:hover { background-color: #ddd; }
+.accordion2 h3.active {background-position: right 8px; }
+.accordion2 p {margin: 0;padding: 10px 15px 20px;border-left: solid 1px #c4c4c4; border-right: solid 1px #c4c4c4;background:#fff;display:none;}
+
+</style>
+</head>
+<body>
+
+<div class="accordion2">
+<h3>这是标题0</h3>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi malesuada, ante at feugiat tincidunt, Vivamus vitae ligula.</p>
+
+<h3>这是标题1</h3>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi malesuada, odio. Vivamus vitae ligula.</p>
+
+<h3>这是标题2</h3>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi malesuadao. Vivamus vitae ligula.</p>
+
+<h3>这是标题3</h3>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi malesuada, ante atneque vitae odio. Vivamus vitae ligula.</p>
+
+<h3>这是标题4</h3>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi malesuada, ante at feugiat tincidunt, e. Vivamus vitae ligula.</p>
+
+</div>
+
+<br />
+
+
+
+
+<script type="text/javascript">
+
+$(".accordion2 h3").eq(0).addClass("active");
+
+$(".accordion2 p").slice(0,1).show();       //等价于$(".accordion2 p"):eq(0)
+
+$(".accordion2 h3").click(function(){
+$(this).next("p").slideToggle("fast").siblings("p:visible").slideUp("fast")   //可用hide("fast")或slideUp("fast");
+$(this).toggleClass("active");
+$(this).siblings("h3").removeClass("active");
+
+});
+
+
+</script>
+
+</body></html>

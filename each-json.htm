@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>test</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+.tabEven { background: red; color:#fff;}
+.tabOdd { background: blue;color:#fff; }
+div{border:1px solid blue;margin-top:5px;}
+p{border:1px solid red;}
+.over{background:blue;color:#fff;width:600px;}
+.out{background:#aaa;color:purple;font-size:16px;font-weight:bold;}
+#dv{border:1px solid blue;margin-bottom:5px;}
+</style>
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+
+var obj={
+"fullname": "Sean Kelly", "org": "SK Consulting",
+"emailaddrs":[ {"type": "work", "value": "kelly@seankelly.biz"},{"type": "home", "pref": 1, "value": "kelly@seankelly.tv"} ],
+"telephones":[{"type": "fax", "value": "+1 214 555 1213"}, {"type": "mobile", "value": "+1 214 555 1214"} ],
+"urls":[ {"type": "work", "value": "http://seankelly.biz/"},{"type": "home", "value": "http://seankelly.tv/"} ]
+}
+
+var f=function(x,objA){
+	$.each(objA,function(y,objY){
+		if(typeof objY=='object') $.each(objY,function(z,objZ){ document.write(z+":"+objZ+"<br />"); });
+	});
+}
+
+$.each(obj,f)
+
+</script>
+
+</body></html>
+
+

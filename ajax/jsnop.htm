@@ -1,0 +1,44 @@
+	<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>jsonp</title>
+<head>
+<script type="text/javascript" src="../jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;}
+#a,#b,#c{background:purple;color:#fff;padding:10px;width:800px;margin:5px 0;word-wrap:break-word;word-break:break-all;}
+</style>
+</head>
+<body>
+<xmp>
+AJAX 请求开始时执行函数。Ajax 事件
+想ajaxSuccess后ajaxComplete
+</xmp>
+
+<pre id="a">a</pre>
+<div id="c">c</div>
+<div id="b">b</div>
+
+<script type="text/javascript">
+
+$.ajax({
+type: "GET",
+url: "http://61.141.235.120/jsonp.php",
+data: "name=John&location=Boston",
+dataType: "jsonp",
+jsonpCallback: "rg.ready",
+success: function(msg, textStatus){
+//alert(textStatus);
+alert( "Data Saved: " +   msg );
+}
+});
+
+var rg = {};
+rg.ready = function(key,data) {
+alert(data);
+}
+
+
+</script>
+
+</body></html>

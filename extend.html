@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>extend</title>
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;}
+</style>
+</head>
+<body>
+
+<pre>
+$.extend(object) 可以理解为JQuery 添加一个静态方法。
+$.fn.extend(object) 可以理解为JQuery实例添加一个方法。
+http://www.cnblogs.com/xcj26/p/3345556.html
+</pre>
+
+
+
+
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<script type="text/javascript">
+
+
+/* $.extend 定义与调用 */
+$.extend({
+fun1: function () { alert("执行方法一"); }
+});
+$.fun1();
+
+/*  $.fn.extend 定义与调用 */
+$.fn.extend({
+fun2: function () { alert("执行方法2"); }
+});
+
+$(this).fun2();
+
+//等同于
+$.fn.fun3 = function () { alert("执行方法三"); }
+$(this).fun3();
+
+
+
+
+</script>
+</body>
+</html>
+

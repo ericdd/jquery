@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>prop</title>
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;}
+</style>
+</head>
+<body>
+<pre>
+http://www.cnblogs.com/season-huang/p/3360869.html
+is, attr, prop方法的区别。 prop()是1.6以后添加的
+
+attr相当于 Element.getAttribute / Element.setAttribute
+prop相当于 Element['name'] / Element.name
+
+</pre>
+
+<div class="div">
+<input type="radio" name="aa" value="" id="a"/>
+<input type="radio" name="aa" value="" id="b"/>
+</div>
+
+<div class="div">
+<input type="checkbox" name="bb" value="" id="c"/>
+<input type="checkbox" name="bb" value="" id="d"/>
+</div>
+
+<input type="button" id="btn" value="确 定"/>
+
+<script type="text/javascript" src="jquery-1.7.js"></script>
+
+<script type="text/javascript">
+
+$("#btn").click(function() {
+var s = "";
+s += $("#a").attr("checked") + ", ";         //无论a被选中没有，attr都返回checked
+s += $("#a").prop("checked") + ", ";;
+s += $("#a").is(":checked") + ", ";;
+
+s += "\r\n";
+
+s += $("#c").attr("checked") + ", ";;         //无论c被选中没有，attr都返回checked
+s += $("#c").prop("checked") + ", ";;
+s += $("#c").is(":checked") + ", ";;
+
+alert(s);
+
+})
+
+
+
+</script>
+</body>
+</html>
+

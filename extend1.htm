@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>extend</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;}
+</style>
+</head>
+<body>
+<pre>
+<strong>2、合并多个对象.</strong>
+
+为jQuery.extend(css1,css2)为例，css1,css2个有一些属性(法照样会比处理,这里之讲属性).
+extend函数会把css2有而css2没有的属性加到css1中,如果css2的某个属性与css1的某个属性名称享用，就会用css2的属性去覆盖css1的同名属性。
+css1就是最后的整和对象。或者也可以用 ：
+
+var css1={size: "10px",style: "normal"}
+var css2={size: "12px",style: "weight",color: "red"}
+
+</pre>
+
+<hr />
+<script type="text/javascript">
+
+var css1={size: "10px",style: "normal"}
+var css2={size: "12px",style: "weight",color: "red"}
+
+$.extend(css1,css2)  //结果:css1的size属性被覆盖,而且继承了css2的weight属性
+var css3 = jQuery.extend({}, css1, css2); //合并css1和css2, 但不修改css1，返回合并后的对象
+
+$.each(
+css1,function(k, v){ document.write(k+ ": " + v +", "); }
+)
+
+document.write("<br />");
+
+$.each(
+css3,function(k, v){ document.write(k+ ": " + v +", "); }
+)
+
+</script>
+
+</body></html>

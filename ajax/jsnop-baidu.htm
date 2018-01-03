@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>jsonp-baidu</title>
+<head>
+<script type="text/javascript" src="../jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;}
+#a,#b,#c{background:purple;color:#fff;padding:10px;width:800px;margin:5px 0;word-wrap:break-word;word-break:break-all;}
+</style>
+</head>
+<body>
+
+
+<input type="text" id="name" name="name" value="" maxlength=""/>
+
+
+<script type="text/javascript">
+
+function z(id){ return document.getElementById(id)}
+
+z("name").onkeyup = function() {
+
+var vv = this.value;
+
+$.ajax({
+type: "GET",
+url: "http://suggestion.baidu.com/su",
+data: "cb=baiduSug&wd=" + vv,
+dataType: "jsonp",
+jsonpCallback: "baiduSug",
+success: function(msg, textStatus){
+print_r(msg);
+}
+});
+
+
+
+}
+
+function print_r(a,p,sp){
+var s="";
+var sp=sp||"\r\n";
+for(k in a) {
+s+=k+": "+a[k]+sp;
+}
+if(!p) alert(s);
+return s;
+}
+
+
+</script>
+
+</body></html>

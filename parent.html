@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>parent</title>
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;}
+.box{padding:10px;border:10px solid blue;width:600px;margin:20px;}
+li{padding:10px;}
+
+</style>
+</head>
+<body>
+<pre>
+parent():返回一个父元素
+parents()：返回全部父元素，包含父元素的父元素
+
+closest和parents的主要区别是：
+1，前者从当前元素开始匹配寻找，后者从父元素开始匹配寻找；
+2，前者逐级向上查找，直到发现匹配的元素后就停止了，后者一直向上查找直到根元素，然后把这些元素放进一个临时集合中，再用给定的选择器表达式去过滤；
+3，前者返回0或1个元素，后者可能包含0个，1个，或者多个元素。 
+
+</pre>
+
+
+<div id="a">
+
+	<div class="box">
+		<ul>
+			<li><span id="age">age</span></li>
+		</ul>
+	</div>
+
+
+
+</div>
+
+
+
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<script type="text/javascript">
+
+var p1 = $("#age").parent();
+var p2 = $("#age").parents();
+var p3 = $("#age").parentsUntil("#a");
+
+var p0 = $("#age").closest("div");
+console.log(p0.html());
+
+console.log(p0);
+console.log(p1);
+console.log(p2);
+console.log(p3);
+
+</script>
+</body>
+</html>
+

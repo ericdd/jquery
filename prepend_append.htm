@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>test</title>
+<meta charset="gb2312">
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{font-family:tahoma;font-size:15px;text-decoration:none;}
+a,p,div{border:1px solid blue;width:80%;margin:10px;}
+div{border:1px solid red;}
+</style>
+</head>
+
+<body>
+<xmp>
+append(html)在匹配元素内部，且末尾插入指定html
+同理还有append(elem)  append(elems) before(html) before(elem) before(elems)
+</xmp>
+<hr />
+
+<div>
+<p id="p1">DIV里面的第一个P</p>
+<p>DIV里面的第二个P</p>
+<strong id="st">strong</strong>
+</div>
+<br />
+
+<input type="button" value="append(html)" onClick="jq1()" />
+<input type="button" value="prepend(html)" onClick="jq2()" />
+<input type="button" value="after(html)" onClick="jq3()" />
+<input type="button" value="before(html)" onClick="jq4()" /><br /><br />
+
+
+
+<a href="#" id="test1" >after(html)</a><br /><br />
+
+
+<script type="text/javascript">
+
+function jq1(){$("#test1").append("<b>Hello</b>");}
+function jq2(){$("#test1").prepend("<b>Hello</b>");}
+function jq3(){$("#test1").after("<b>Hello</b>");}
+function jq4(){$("#test1").before("<b>Hello</b>");}
+
+
+</script>
+
+</body></html>
+
+
+
+
