@@ -50,9 +50,9 @@ $(".accordion2 h3").eq(0).addClass("active");
 $(".accordion2 p").slice(0,1).show();       //等价于$(".accordion2 p"):eq(0)
 
 $(".accordion2 h3").click(function(){
-$(this).next("p").slideToggle("fast").siblings("p:visible").slideUp("fast")   //可用hide("fast")或slideUp("fast");
-$(this).toggleClass("active");
-$(this).siblings("h3").removeClass("active");
+	$(this).next("p").slideToggle("fast").siblings("p:visible").slideUp("fast")   //可用hide("fast")或slideUp("fast");
+	$(this).toggleClass("active");
+	$(this).siblings("h3").removeClass("active");
 
 });
 
