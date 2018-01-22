@@ -86,10 +86,10 @@
 <script type="text/javascript">
 function z(id){ return document.getElementById(id)}
 
-z("subform").onclick = function(){
+z("subform").onclick = function () {
 
-var ids = $(".ckbsbox").find(".ckb:checked").prop("value");
-alert(ids);
+    var ids = $(".ckbsbox").find(".ckb:checked").prop("value");
+    alert(ids);
 
 //z("msg").innerHTML="正在提交……";
 //z("subform").disabled=true;
@@ -100,14 +100,14 @@ alert(ids);
 
 $(".ckbsbox .lab>.ckb:checked").parent(".lab").show();
 
-$(".btn2").on("click", function(){
+$(".btn2").on("click", function () {
 
-var hashides = $(this).prev(".ckbsbox").find(".lab:hidden").length;
-if(hashides) {
-$(this).prev(".ckbsbox").find(".lab").show();
-} else {
-$(this).prev(".ckbsbox").find(".ckb").not(":checked").parent(".lab").hide();
-}
+    var hashides = $(this).prev(".ckbsbox").find(".lab:hidden").length;
+    if (hashides) {
+        $(this).prev(".ckbsbox").find(".lab").show();
+    } else {
+        $(this).prev(".ckbsbox").find(".ckb").not(":checked").parent(".lab").hide();
+    }
 });
 
 

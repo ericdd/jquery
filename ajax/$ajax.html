@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>$.ajax</title>
+<head>
+<script type="text/javascript" src="../jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;}
+#a,#b,#c{background:purple;color:#fff;padding:10px;width:800px;margin:5px 0;word-wrap:break-word;word-break:break-all;}
+</style>
+</head>
+<body>
+<xmp>
+AJAX 请求开始时执行函数。Ajax 事件
+想ajaxSuccess后ajaxComplete
+</xmp>
+
+<pre id="a">a</pre>
+<div id="c">c</div>
+<div id="b">b</div>
+
+<script type="text/javascript">
+
+    $.ajax({
+        type: "POST",
+        url: "a.php",
+//data: "name=John&location=Boston",
+        data: {name: "eric", age: 29},
+        dataType: "text",
+        success: function (msg) {
+            $("#a").html("Data Saved: " + msg);
+        }
+    });
+
+
+    $("#a").ajaxComplete(
+        function (request, settings) {
+            $(this).append("<strong>Request Complete</strong>");
+        }
+    );
+
+    $("#b").ajaxSuccess(
+        function (request, settings) {
+            $(this).html("<i>Successful Request!</i>");
+            $("#b").html("ajaxSuccess");
+        }
+    );
+</script>
+
+</body></html>

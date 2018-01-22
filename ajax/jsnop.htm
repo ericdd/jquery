@@ -1,6 +1,6 @@
 	<!DOCTYPE html>
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>jsonp</title>
 <head>
 <script type="text/javascript" src="../jquery-1.7.js"></script>
@@ -11,8 +11,8 @@
 </head>
 <body>
 <xmp>
-AJAX 请求开始时执行函数。Ajax 事件
-想ajaxSuccess后ajaxComplete
+AJAX 璇锋眰寮�濮嬫椂鎵ц鍑芥暟銆侫jax 浜嬩欢
+鎯砤jaxSuccess鍚巃jaxComplete
 </xmp>
 
 <pre id="a">a</pre>
@@ -21,22 +21,22 @@ AJAX 请求开始时执行函数。Ajax 事件
 
 <script type="text/javascript">
 
-$.ajax({
-type: "GET",
-url: "http://61.141.235.120/jsonp.php",
-data: "name=John&location=Boston",
-dataType: "jsonp",
-jsonpCallback: "rg.ready",
-success: function(msg, textStatus){
+    $.ajax({
+        type: "GET",
+        url: "http://61.141.235.120/jsonp.php",
+        data: "name=John&location=Boston",
+        dataType: "jsonp",
+        jsonpCallback: "rg.ready",
+        success: function (msg, textStatus) {
 //alert(textStatus);
-alert( "Data Saved: " +   msg );
-}
-});
+            alert("Data Saved: " + msg);
+        }
+    });
 
-var rg = {};
-rg.ready = function(key,data) {
-alert(data);
-}
+    var rg = {};
+    rg.ready = function (key, data) {
+        alert(data);
+    }
 
 
 </script>
