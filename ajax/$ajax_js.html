@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>dataType</title>
 <head>
 <script type="text/javascript" src="jquery-1.7.js"></script>
 <style type="text/css">
-*{list-style:none;font-size:12px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+*{list-style:none;font-size:14px;font-family:tahoma;text-decoration:none;}
 
 .panel{background:blue;padding:10px;color:#fff;}
 p{background:purple;padding:10px;color:#fff;}
@@ -31,39 +31,27 @@ p{background:purple;padding:10px;color:#fff;}
 <div class="panel">welcome to jQuery!</div>
 <p id="result">result</p>
 
-<form method="post" action="" id="form1" onsubmit="">
-
-<input type="text" id="name1" name="txt1" value="aaa"/>
-<input type="text" id="name2" name="txt2" value="bbb"/>
-
-<input type="button" id="btn1" name="btn1" value="确 定1" onclick="" />
-<input type="button" id="btn2" name="btn2" value="确 定2" onclick="" />
-
-<br />
-<textarea id="content" name="content"></textarea>
-
-</form>
 
 <script type="text/javascript">
 
-$.ajax({
-type: "GET",
-url: "a.js",						 //  载入并执行一个JavaScript文件。
-dataType:   "script"
-})
+    $.ajax({
+        type: "GET",
+        url: "a.js",						 //  载入并执行一个JavaScript文件。
+        dataType: "script"
+    })
 
 
-$("#result").ajaxComplete(
-function(request, settings){
-$(this).append("<strong>Request Complete</strong>");
-}
-);
+    $("#result").ajaxComplete(
+        function (request, settings) {
+            $(this).append("Request Complete, "+Math.random());
+        }
+    );
 
-$("div.panel").ajaxSuccess(
-function(request, settings){
-$(this).html("<i>Successful Request!</i>");
-}
-);
+    $("div.panel").ajaxSuccess(
+        function (request, settings) {
+            $(this).html("Successful Request!");
+        }
+    );
 </script>
 
 </body></html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ajax</title>
 <head>
 <script type="text/javascript" src="jquery-1.7.js"></script>
 <style type="text/css">
@@ -17,50 +17,48 @@ p{border:1px solid red;}
 <div class="panel">welcome to jQuery!</div>
 <div id="result">&nbsp;</div>
 
-<div class="a" id="loading"><a href="#">ÕâÊÇdiva</a></div>
-<div class="b"  id="dv2"><a href="#">ÕâÊÇdivb</a></div>
+<div class="a" id="loading"><a href="#">è¿™æ˜¯diva</a></div>
+<div class="b"  id="dv2"><a href="#">è¿™æ˜¯divb</a></div>
 
 <form method="post" action="" id="form1" onsubmit="">
 <input type="text" id="name1" name="txt1" value=""/>
 <input type="text" id="name2" name="txt2" value=""/>
-<input type="button" id="btn1" value="È· ¶¨1" onclick="" />
-<input type="button" id="btn2" value="È· ¶¨2" onclick="" /> <br />
+<input type="button" id="btn1" value="ç¡® å®š1" onclick="" />
+<input type="button" id="btn2" value="ç¡® å®š2" onclick="" /> <br />
 <textarea id="content" name="content" rows="5" cols="80"></textarea>
 </form>
 
 <script type="text/javascript">
 
-$("input[type=button]").click(function() {
+    $("input[type=button]").click(function () {
 
-$("#loading").ajaxStart(function(){
-$(this).html(123);
-alert($(this).html());		//ÏÈÖ´ĞĞÕâĞĞ	,ÊÔÊÔ°ÑÕâ¸öº¯Êı·Åµ½$.post()ºóÃæ
-});
+        $("#loading").ajaxStart(function () {
+            $(this).html(123);
+            alert($(this).html());		//å…ˆæ‰§è¡Œè¿™è¡Œ	,è¯•è¯•æŠŠè¿™ä¸ªå‡½æ•°æ”¾åˆ°$.post()åé¢
+        });
 
-$.post("a.php",
-{ name: "John", time: "2pm" },
-function(data){
-alert("Data Loaded: " + data);		//ÔÙÖ´ĞĞÕâĞĞ
-}
-);
-
-
-
-});
+        $.post("a.php",
+            {name: "John", time: "2pm"},
+            function (data) {
+                alert("Data Loaded: " + data);		//å†æ‰§è¡Œè¿™è¡Œ
+            }
+        );
 
 
+    });
 
-$("#result").ajaxComplete(
-function(request, settings){
-$(this).append("<strong>Request Complete</strong>");
-}
-);
+    $("#result").ajaxComplete(
+        function (request, settings) {
+            $(this).append("<strong>Request Complete</strong>");
+        }
+    );
 
-$("div.panel").ajaxSuccess(
-function(request, settings){
-$(this).html("<i>Successful Request!</i>");
-}
-);
+    $("div.panel").ajaxSuccess(
+        function (request, settings) {
+            $(this).html("<i>Successful Request!</i>");
+        }
+    );
+
 </script>
 
 </body></html>
