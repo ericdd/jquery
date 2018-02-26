@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>get</title>
+<head>
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<style type="text/css">
+*{list-style:none;font-size:14px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+
+</style>
+</head>
+<body>
+<xmp>
+get 返回dom元素
+eq 返回jquery对象
+</xmp>
+<hr />
+
+<ul id="ul">
+	<li>aaa</li>
+	<li>bbb</li>
+	<li>ccc</li>
+	<li>ddd</li>
+</ul>
+
+
+
+
+<script type="text/javascript">
+
+alert($("#ul>li").get(1).innerHTML);	  
+alert($("#ul>li").get()[1].innerHTML);		 //get() 		 取得所有匹配的（DOM）元素集合
+
+alert($("#ul>li:eq(2)").html());	
+alert($("#ul>li").eq(2).html());	
+alert($("#ul>li:eq(2)").length);
+
+</script>
+
+</body></html>
