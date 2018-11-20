@@ -24,7 +24,10 @@
 
 <script type="text/javascript">
 
-console.log($('li').first().html());
+var ss = "Violet pâle,Blanc,Bleu,Rouge,Noir,"
+var aa = ss.split(",")
+console.log(aa);
+console.log( $.grep(aa,function(n){ return n == 0 || n }) );
 
 </script>
 </body>

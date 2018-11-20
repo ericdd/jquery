@@ -25,15 +25,15 @@
 <script type="text/javascript">
 
 $("#old").click(function(){
-$("input").trigger("focus");
+	$("input").trigger("focus");
 });
 
 $("#new").click(function(){
-$("input").triggerHandler("focus");
+	$("input").triggerHandler("focus");
 });
 
 $("input").focus(function(){
-$("<span>Focused!</span>").appendTo("body").fadeOut(1000);
+	$("<span>Focused!</span>").appendTo("body").fadeOut(1000);
 });
 
 

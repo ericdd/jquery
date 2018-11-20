@@ -1,42 +1,50 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>test</title>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
-<title>JqueryTable隔行变色 http://www.51obj.cn/</title>
 <script type="text/javascript" src="jquery-1.7.js"></script>
-
 <style type="text/css">
-#spanel,#showHide,#fadeout { width:200px; height:100px; background-color:red; position:relative; cursor:pointer; font-size:12px;margin-top:10px; color:#fff;}
-
+*{list-style:none;font-size:14px;font-family:tahoma;letter-spacing:1px;text-decoration:none;}
+.tabEven { background: red; color:#fff;}
+.tabOdd { background: blue;color:#fff; }
+div{border:1px solid blue;margin-top:5px;}
+p{border:1px solid red;}
+.over{background:blue;color:#fff;}
+#dv{border:1px solid blue;margin-bottom:5px;}
 </style>
 </head>
 <body>
-<input type="button" id="btn1" value="确 定" onclick="" />
 
-<div id="showHide">click</div>
+<table border="1" id="mytable" style="display:none;">
+<tr style="height:50px;"><td>TD #0</td><td>TD #1</td><td>TD #2</td></tr>
+<tr><td>TD #3</td><td>TD #4</td><td>TD #5</td></tr>
+<tr><td>TD #6</td><td>TD #7</td><td>TD #8</td></tr>
+</table>
 
-<div id="spanel"><h5>hello</h5> </div>
+<form method="post" action="" id="form1" name="form1" onsubmit="">
+<input type="radio" name="one" value="1"/>   1
+<input type="radio" name="two" value="2"/>    2
+<input type="radio" name="three" value="3"/>     3
+<input type="text" id="name1" name="txt1" value=""/>
+<input type="text" id="name2" name="txt2" value=""/>
+<input type="button" id="btn1" value="确 定1" onclick="" />
+<input type="button" id="btn2" value="确 定2" onclick="" /> <br />
+<textarea id="content" name="content" rows="5" cols="80" onblur="alert(this.value)">初始值</textarea>
+<input type="submit" id="subform" name="subform" value="提 交"/>
+</form>
 
-<div id="fadeout">fadeout淡出效果</div>
+<p >p1</p>
+<p>p2</p>
+
+
 
 <script type="text/javascript">
+/* 和fadeIn与fadeOut不同的是, fadeTo函数只改变对象的透明度, 即使透明度为0对象仍然占位.
+而fadeIn和fadeOut最后一定会改变对象的display属性, fadeOut后对象将从页面上消失(不占位), 但是fadeTo仅仅是让其透明(占位). */
 
-//用toggle,hide(),show()实现显示与隐藏
-$("#showHide").toggle(
-function(){$(this).hide(600)},
-function() { $(this).show(600); }
-);
-
-//使用animate实现简单的动画效果
-$("#spanel").bind("click",function(){
-$(this).animate({left:"300px",top:"300",height:"300px"},3000);
-});
-
-
-$("#btn1").click(
-function(){$("#fadeout").toggle(600)}
-);
+$("#form1").animate({ height: 'toggle', opacity: 'toggle' }, 3000);
+$("#mytable").animate({ height: 'toggle', opacity: 'toggle' }, "slow");
 </script>
-</body>
-</html>
 
+</body></html>
