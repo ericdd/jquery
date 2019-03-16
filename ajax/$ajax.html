@@ -22,9 +22,9 @@ AJAX 请求开始时执行函数。Ajax 事件
 <script type="text/javascript">
 
     $.ajax({
-        type: "POST",
-        url: "a.php",
-//data: "name=John&location=Boston",
+        type: "get",
+//        url: "http://localhost:92/plangs/page/10/about",
+		url: "http://csoa.sellercool.com/plangs/page/10/about",
         data: {name: "eric", age: 29},
         dataType: "text",
         success: function (msg) {

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>scale</title>
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
+<style type="text/css">
+body { margin: 20px auto; padding: 0; width: 580px; font: 80%/120% Arial, Helvetica, sans-serif; }
+
+#box { background: #6699FF; height: 100px; width: 100px; position: relative; }
+</style>
+</head>
+<body>
+
+<p><a href="#" class="run">Run</a></p>
+
+
+<div id="box"></div>
+
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+
+
+$( document ).click(function() {
+  $( "#box" ).toggle({ effect: "scale", direction: "both", percent: 20, origin : [ "middle", "center" ] });
+});
+
+
+
+</script>
+</body>
+</html>
+
